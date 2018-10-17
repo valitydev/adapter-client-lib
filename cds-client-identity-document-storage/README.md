@@ -1,6 +1,6 @@
-Hellgate
+CDS Client Idendtity Document Storage
 
-Обработка основного хранилища
+Библиотека взаимодействия клиента с CDS сервисом для работы с приложениями
 
 ### Настройки
 
@@ -9,7 +9,7 @@ Hellgate
 ```
 <dependency>
     <groupId>com.rbkmoney.proxy-libs</groupId>
-    <artifactId>hellgate-client-proxy-host-provider</artifactId>
+    <artifactId>cds-client-identity-document-storage</artifactId>
     <version>1.263-970089c</version>
 </dependency>
 ```
@@ -31,15 +31,14 @@ Hellgate
 и в `application.yml`
 
 ```
-hellgate:
+cds:
   client:
-    proxy-host-provider:
-      url: http://127.0.0.1:8022/v1/proxyhost/provider
-      timeout: 30000
+    identity-document-storage:
+      url: http://127.0.0.1:8022/v1/keyring
+      timeout: 5000
 ```
 
 При подключенной зависимости без указания настроек в `application.yml` и запуске приложения - оно выдаст ошибку, что не был указан URL и как это исправить
-
 
 ### Использование
 
@@ -47,5 +46,21 @@ hellgate:
 
 ```
 @Autowired
-HellgateClientProxyHostProvider client;
+CdsClientIDStorage cdsIDStorage;
+
+RussianDomesticPassport passport = new RussianDomesticPassport();
+passport.setSeries("series");
+passport.setNumber("number");
+passport.setIssuer("issuer");
+passport.setIssuerCode("issuer_code");
+passport.setIssuedAt("2016-03-22T06:12:27Z");
+passport.setFamilyName("Петров");
+passport.setFirstName("Николай");
+passport.setBirthDate("2016-03-22T06:12:27Z");
+passport.setBirthPlace("2016-03-22T06:12:27Z");
+
+IdentityDocument document = new IdentityDocument();
+document.setRussianDomesticPassport(passport);
+
+cdsIDStorage.put(document);
 ```

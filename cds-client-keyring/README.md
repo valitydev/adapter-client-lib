@@ -10,18 +10,32 @@ CDS Client Keyring
 <dependency>
     <groupId>com.rbkmoney.proxy-libs</groupId>
     <artifactId>cds-client-keyring</artifactId>
-    <version>1.99-557f549</version>
+    <version>1.263-970089c</version>
+</dependency>
+```
+
+В зависимостях также должны быть указаны
+```
+<dependency>
+    <groupId>com.rbkmoney.woody</groupId>
+    <artifactId>woody-thrift</artifactId>
+    <version>1.1.15</version>
+</dependency>
+<dependency>
+    <groupId>com.rbkmoney</groupId>
+    <artifactId>damsel</artifactId>
+    <version>1.263-970089c</version>
 </dependency>
 ```
 
 и в `application.yml`
 
 ```
-rbkmoney:
-  cds:
-    client:
-      url:
-        keyring: http://127.0.0.1:8022/v1/keyring   
+cds:
+  client:
+    keyring:
+      url: http://127.0.0.1:8022/v1/keyring
+      timeout: 5000
 ```
 
 При подключенной зависимости без указания настроек в `application.yml` и запуске приложения - оно выдаст ошибку, что не был указан URL и как это исправить
@@ -32,5 +46,7 @@ rbkmoney:
 
 ```
 @Autowired
-CdsClientKeyring client;
+CdsClientKeyring cdsKeyring;
+
+cdsKeyring.lock();
 ```

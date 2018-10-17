@@ -2,15 +2,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
     <parent>
-        <artifactId>proxy-libs</artifactId>
         <groupId>com.rbkmoney.proxy-libs</groupId>
+        <artifactId>proxy-libs</artifactId>
         <version>1.263-970089c</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>hellgate-client-proxy-host-provider</artifactId>
+    <artifactId>cds-client-identity-document-storage</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>
@@ -34,6 +35,10 @@
             <groupId>com.rbkmoney</groupId>
             <artifactId>damsel</artifactId>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.rbkmoney</groupId>
+            <artifactId>identdocstore-proto</artifactId>
         </dependency>
         <dependency>
             <groupId>javax.validation</groupId>
