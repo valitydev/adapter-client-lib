@@ -13,7 +13,6 @@
 
 ##### CDS
 
-1. [cds-client-keyring](cds-client-keyring/README.md)
 1. [cds-client-storage](cds-client-storage/README.md)
 1. [cds-client-identity-document-storage](cds-client-identity-document-storage/README.md)
 
@@ -23,9 +22,11 @@
 1. [hellgate-adapter-client](hellgate-adapter-client/README.md)
 
 
-##### Wrapper Damsel
+##### Damsel Utils
 
-1. [wrapper-damsel](wrapper-damsel/README.md)
+Версия не обновляется с остальными модулями
+
+1. [damsel-utils](damsel-utils/README.md)
 
 
 ### Выпуск новой версии
