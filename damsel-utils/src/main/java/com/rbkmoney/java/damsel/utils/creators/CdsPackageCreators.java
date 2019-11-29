@@ -6,10 +6,6 @@ import com.rbkmoney.damsel.domain.BankCard;
 
 public class CdsPackageCreators {
 
-    public static final String CARDHOLDER_NAME_NONAME = "NONAME";
-    public static final String CARDHOLDER_NAME_UNKNOWN = "UNKNOWN";
-
-
     public static ExpDate createExpDate(byte month, short year) {
         return new ExpDate(month, year);
     }
@@ -28,6 +24,10 @@ public class CdsPackageCreators {
 
     public static CardData createCardDataWithExpDate(String cardholderName, String cvv, String pan, String month, String year) {
         return createCardData(cardholderName, cvv, pan, createExpDate(month, year));
+    }
+
+    public static CardData createCardData(String pan, String cvv) {
+        return new CardData().setPan(pan).setCvv(cvv);
     }
 
     public static SessionData createSessionData(AuthData authData) {
@@ -63,11 +63,4 @@ public class CdsPackageCreators {
         return new PutCardDataResult(bankCard, session);
     }
 
-    public static UnlockStatus createUnlockStatusUnlocked() {
-        return UnlockStatus.unlocked(new Unlocked());
-    }
-
-    public static UnlockStatus createUnlockStatusMoreKeysNeeded(short value) {
-        return UnlockStatus.more_keys_needed(value);
-    }
 }
