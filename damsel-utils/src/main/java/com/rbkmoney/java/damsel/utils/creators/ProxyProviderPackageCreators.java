@@ -2,15 +2,18 @@ package com.rbkmoney.java.damsel.utils.creators;
 
 import com.rbkmoney.damsel.base.Timer;
 import com.rbkmoney.damsel.domain.*;
-import com.rbkmoney.damsel.proxy_provider.*;
 import com.rbkmoney.damsel.proxy_provider.Invoice;
 import com.rbkmoney.damsel.proxy_provider.InvoicePayment;
 import com.rbkmoney.damsel.proxy_provider.InvoicePaymentRefund;
 import com.rbkmoney.damsel.proxy_provider.Shop;
+import com.rbkmoney.damsel.proxy_provider.*;
+import com.rbkmoney.damsel.timeout_behaviour.TimeoutBehaviour;
 import com.rbkmoney.damsel.user_interaction.BrowserGetRequest;
 import com.rbkmoney.damsel.user_interaction.BrowserHTTPRequest;
 import com.rbkmoney.damsel.user_interaction.BrowserPostRequest;
 import com.rbkmoney.damsel.user_interaction.UserInteraction;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 import java.nio.ByteBuffer;
 import java.time.Instant;
@@ -23,6 +26,7 @@ import static com.rbkmoney.java.damsel.utils.creators.DomainPackageCreators.crea
 import static com.rbkmoney.java.damsel.utils.extractors.ProxyProviderPackageExtractors.extractInvoiceId;
 import static com.rbkmoney.java.damsel.utils.extractors.ProxyProviderPackageExtractors.extractPaymentId;
 
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ProxyProviderPackageCreators {
 
     public static final String DEFAULT_IP_ADDRESS = "0.0.0.0";
@@ -116,12 +120,12 @@ public class ProxyProviderPackageCreators {
     }
 
     // ProxyResult
-    public static PaymentProxyResult createPaymentProxyResult(Intent intent, byte[] next_state, TransactionInfo trx) {
-        return new PaymentProxyResult(intent).setNextState(next_state).setTrx(trx);
+    public static PaymentProxyResult createPaymentProxyResult(Intent intent, byte[] nextState, TransactionInfo trx) {
+        return new PaymentProxyResult(intent).setNextState(nextState).setTrx(trx);
     }
 
-    public static PaymentProxyResult createPaymentProxyResult(Intent intent, byte[] next_state) {
-        return createPaymentProxyResult(intent, next_state, null);
+    public static PaymentProxyResult createPaymentProxyResult(Intent intent, byte[] nextState) {
+        return createPaymentProxyResult(intent, nextState, null);
     }
 
     public static PaymentProxyResult createPaymentProxyResult(Intent intent) {
@@ -242,6 +246,28 @@ public class ProxyProviderPackageCreators {
 
     public static SuspendIntent createSuspendIntent(String tag, Integer timer, UserInteraction userInteraction) {
         return new SuspendIntent(tag, createTimerTimeout(timer)).setUserInteraction(userInteraction);
+    }
+
+    public static SuspendIntent createSuspendIntentTimeoutBehaviourWithFailure(String tag, Integer timer, UserInteraction userInteraction, Failure failure) {
+        return new SuspendIntent(tag, createTimerTimeout(timer))
+                .setUserInteraction(userInteraction)
+                .setTimeoutBehaviour(createTimeoutBehaviourWithFailure(failure));
+    }
+
+    public static SuspendIntent createSuspendIntent(String tag, Integer timer, UserInteraction userInteraction, TimeoutBehaviour timeoutBehaviour) {
+        return new SuspendIntent(tag, createTimerTimeout(timer)).setUserInteraction(userInteraction).setTimeoutBehaviour(timeoutBehaviour);
+    }
+
+    public static TimeoutBehaviour createTimeoutBehaviour(OperationFailure operationFailure) {
+        return TimeoutBehaviour.operation_failure(operationFailure);
+    }
+
+    public static TimeoutBehaviour createTimeoutBehaviourWithFailure(Failure failure) {
+        return TimeoutBehaviour.operation_failure(OperationFailure.failure(failure));
+    }
+
+    public static TimeoutBehaviour createTimeoutBehaviourWithOperationTimeout() {
+        return TimeoutBehaviour.operation_failure(OperationFailure.operation_timeout(new OperationTimeout()));
     }
 
     public static Intent createIntentWithSleepIntent(Integer timer) {
