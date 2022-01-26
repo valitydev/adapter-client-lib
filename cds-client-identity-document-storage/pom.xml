@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.rbkmoney.adapter-client-lib</groupId>
+        <groupId>dev.vality.adapter-client-lib</groupId>
         <artifactId>adapter-client-lib</artifactId>
-        <version>2.1.28</version>
+        <version>1.0.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -15,7 +15,7 @@
     <packaging>jar</packaging>
 
     <properties>
-        <identdocstore-proto.version>1.10-89a4cda</identdocstore-proto.version>
+        <identdocstore-proto.version>1.13-a3ec1df</identdocstore-proto.version>
     </properties>
 
     <dependencies>
@@ -23,10 +23,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -45,17 +41,18 @@
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
-        <!--RBK libs-->
+
+        <!--Vality libs-->
         <dependency>
-            <groupId>com.rbkmoney.woody</groupId>
+            <groupId>dev.vality.woody</groupId>
             <artifactId>woody-thrift</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.rbkmoney</groupId>
+            <groupId>dev.vality</groupId>
             <artifactId>damsel</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.rbkmoney</groupId>
+            <groupId>dev.vality</groupId>
             <artifactId>identdocstore-proto</artifactId>
             <version>${identdocstore-proto.version}</version>
             <scope>provided</scope>

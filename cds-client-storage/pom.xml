@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.rbkmoney.adapter-client-lib</groupId>
+        <groupId>dev.vality.adapter-client-lib</groupId>
         <artifactId>adapter-client-lib</artifactId>
-        <version>2.1.28</version>
+        <version>1.0.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -15,9 +15,10 @@
     <packaging>jar</packaging>
 
     <properties>
-        <cds-proto.version>1.62-07f2b0f</cds-proto.version>
-        <adapter-thrift-lib.version>1.0.5</adapter-thrift-lib.version>
+        <cds-proto.version>1.66-01353ce</cds-proto.version>
+        <adapter-thrift-lib.version>1.0.0</adapter-thrift-lib.version>
         <javafaker.version>1.0.2</javafaker.version>
+        <snakeyaml.version>1.29</snakeyaml.version>
     </properties>
 
     <dependencies>
@@ -33,7 +34,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            </dependency>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-autoconfigure</artifactId>
@@ -60,31 +61,33 @@
         <dependency>
             <groupId>org.yaml</groupId>
             <artifactId>snakeyaml</artifactId>
-            <version>1.27</version>
+            <version>${snakeyaml.version}</version>
         </dependency>
-        <!--RBK libs-->
+
+        <!--Vality libs-->
         <dependency>
-            <groupId>com.rbkmoney</groupId>
+            <groupId>dev.vality</groupId>
             <artifactId>cds-proto</artifactId>
             <version>${cds-proto.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.rbkmoney.adapter-thrift-lib</groupId>
+            <groupId>dev.vality.adapter-thrift-lib</groupId>
             <artifactId>cds-utils</artifactId>
             <version>${adapter-thrift-lib.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.rbkmoney.adapter-thrift-lib</groupId>
+            <groupId>dev.vality.adapter-thrift-lib</groupId>
             <artifactId>damsel-utils</artifactId>
             <version>${adapter-thrift-lib.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.rbkmoney.woody</groupId>
+            <groupId>dev.vality.woody</groupId>
             <artifactId>woody-thrift</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.rbkmoney</groupId>
+            <groupId>dev.vality</groupId>
             <artifactId>damsel</artifactId>
+            <version>1.544-dcd92dd</version>
         </dependency>
     </dependencies>
 
