@@ -21,7 +21,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>15</java.version>
-        <spring-boot.version>2.6.0</spring-boot.version>
+        <spring-boot.version>2.3.8.RELEASE</spring-boot.version>
         <damsel.version>1.544-dcd92dd</damsel.version>
         <lombok.version>1.18.20</lombok.version>
         <woody-thrift.version>[1.0.4,)</woody-thrift.version>
@@ -62,6 +62,7 @@
         <module>fistful-client-withdrawal</module>
     </modules>
 
+
     <build>
         <plugins>
             <plugin>
@@ -80,11 +81,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <version>3.8.0</version>
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
-                    <verbose>true</verbose>
                 </configuration>
             </plugin>
         </plugins>
