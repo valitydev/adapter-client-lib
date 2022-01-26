@@ -1,7 +1,7 @@
 package dev.vality.adapter.helpers.hellgate;
 
-import com.rbkmoney.damsel.proxy_provider.ProviderProxyHostSrv;
 import dev.vality.adapter.helpers.hellgate.exception.HellgateException;
+import dev.vality.damsel.proxy_provider.ProviderProxyHostSrv;
 import org.apache.thrift.TException;
 import org.junit.Before;
 import org.junit.Test;
