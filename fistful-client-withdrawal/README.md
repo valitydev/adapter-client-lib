@@ -8,7 +8,7 @@ Fistful Client Withdrawal
 
 ```
 <dependency>
-    <groupId>com.rbkmoney.adapter-client-lib</groupId>
+    <groupId>dev.vality.adapter-client-lib</groupId>
     <artifactId>fistful-client-withdrawal</artifactId>
     <version>${fistful-client-withdrawal.version}</version>
 </dependency>
@@ -18,12 +18,12 @@ Fistful Client Withdrawal
 
 ```
 <dependency>
-    <groupId>com.rbkmoney.woody</groupId>
+    <groupId>dev.vality.woody</groupId>
     <artifactId>woody-thrift</artifactId>
     <version>${woody-thrift.version}</version>
 </dependency>
 <dependency>
-    <groupId>com.rbkmoney</groupId>
+    <groupId>dev.vality</groupId>
     <artifactId>damsel</artifactId>
     <version>${damsel.version}</version>
 </dependency>

@@ -1,12 +1,6 @@
 # adapter-client-lib
 
-[![Build Status](http://ci.rbkmoney.com/buildStatus/icon?job=rbkmoney_private/adapter-client-lib/master)](http://ci.rbkmoney.com/job/rbkmoney_private/job/adapter-client-lib/job/master/)
-
 Вспомогательные библиотеки для адаптеров
-
-### Разработчики
-
-- [Anatoly Cherkasov](https://github.com/avcherkasov)
 
 ### Описание:
 
@@ -25,7 +19,6 @@
 
 ##### Fistful
 
-1. [fistful-client](fistful-client/README.md)
 1. [fistful-client-withdrawal](fistful-client-withdrawal/README.md)
 
 ### Выпуск новой версии

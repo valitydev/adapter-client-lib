@@ -8,7 +8,7 @@ CDS Client Storage
 
 ```
 <dependency>
-    <groupId>com.rbkmoney.adapter-client-lib</groupId>
+    <groupId>dev.vality.adapter-client-lib</groupId>
     <artifactId>cds-client-storage</artifactId>
     <version>${cds-client-storage.version}</version>
 </dependency>
@@ -18,17 +18,17 @@ CDS Client Storage
 
 ```
 <dependency>
-    <groupId>com.rbkmoney.woody</groupId>
+    <groupId>dev.vality.woody</groupId>
     <artifactId>woody-thrift</artifactId>
     <version>${woody-thrift.version}</version>
 </dependency>
 <dependency>
-    <groupId>com.rbkmoney</groupId>
+    <groupId>dev.vality</groupId>
     <artifactId>damsel</artifactId>
     <version>${damsel.version}</version>
 </dependency>
 <dependency>
-    <groupId>com.rbkmoney</groupId>
+    <groupId>dev.vality</groupId>
     <artifactId>damsel</artifactId>
     <version>${damsel.version}</version>
 </dependency>
