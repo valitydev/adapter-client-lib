@@ -13,17 +13,15 @@
 
     <groupId>dev.vality.adapter-client-lib</groupId>
     <artifactId>adapter-client-lib</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>pom</packaging>
 
     <properties>
-        <sonar.jacoco.reportPath>${project.basedir}/target/jacoco.exec</sonar.jacoco.reportPath>
-        <dockerfile.base.service.tag>b04c5291d101132e53e578d96e1628d2e6dab0c0</dockerfile.base.service.tag>
         <dockerfile.registry>${env.REGISTRY}</dockerfile.registry>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
-        <spring-boot.version>2.3.1.RELEASE</spring-boot.version>
+        <java.version>15</java.version>
+        <spring-boot.version>2.6.0</spring-boot.version>
         <damsel.version>1.544-dcd92dd</damsel.version>
         <lombok.version>1.18.20</lombok.version>
         <woody-thrift.version>[1.0.4,)</woody-thrift.version>
