@@ -1,5 +1,8 @@
 # adapter-client-lib
 
+UPD.: archived, use https://github.com/valitydev/adapter-common-lib
+---
+
 Вспомогательные библиотеки для адаптеров
 
 ### Описание:
